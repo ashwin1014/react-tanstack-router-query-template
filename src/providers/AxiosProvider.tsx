@@ -35,6 +35,7 @@ const configureResponseInterceptor = (axiosInstance: AxiosInstance) => {
       //   // Retry the original request
       //   return axios(error.config);
       // }
+      // Change according to your apis
       const errorObject = {
         error: error.response?.data,
         status: error.response?.status,

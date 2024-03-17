@@ -1,14 +1,50 @@
 {
   "name": "tanstack-router-query-template",
-  "private": true,
   "version": "0.0.0",
+  "description": "A TypeScript React template using @tanstack/router & @tanstack-react-query",
+  "keywords": [
+    "react",
+    "react-template",
+    "tanstack-router-query-template",
+    "typescript-react-template",
+    "template",
+    "react-query-template",
+    "tanstack-router-template",
+    "tanstack-react-query-template",
+    "react-typescript-template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashwin1014/react-tanstack-router-query-template"
+  },
+  "license": "MIT",
+  "author": "Ashwin Bordoloi <ashwin1014@live.com> (https://github.com/ashwin1014)",
   "type": "module",
-  "author": "Ashwin Bordoloi",
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "commit": "git cz",
+    "dev": "vite",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.json --report-unused-disable-directives --max-warnings 0",
+    "prepare": "husky",
     "preview": "vite preview"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.json": [
+      "prettier --write"
+    ],
+    "package.json": "npx sort-package-json"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
   },
   "dependencies": {
     "@tanstack/react-query": "5.28.4",
@@ -22,6 +58,9 @@
     "zod": "3.22.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.2.0",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/is-ignored": "^19.0.3",
     "@tanstack/eslint-plugin-query": "5.27.7",
     "@tanstack/react-query-devtools": "5.28.4",
     "@tanstack/router-devtools": "1.20.1",
@@ -31,6 +70,9 @@
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "4.2.1",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-git": "^1.9.0",
     "eslint": "8.57.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-airbnb-typescript": "18.0.0",
@@ -47,6 +89,8 @@
     "eslint-plugin-react-refresh": "0.4.6",
     "eslint-plugin-sort-keys-fix": "1.1.2",
     "eslint-plugin-typescript-sort-keys": "3.2.0",
+    "husky": "^9.0.11",
+    "rimraf": "^5.0.5",
     "typescript": "5.4.2",
     "vite": "5.1.6"
   }
