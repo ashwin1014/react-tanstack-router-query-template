@@ -8,10 +8,8 @@ const queryClient = new QueryClient();
 
 const router = createRouter({
   context: {
-    auth: undefined!, // We'll inject this when we render
     queryClient,
   },
-  // @ts-expect-error will always be "any"
   defaultErrorComponent: ({ error }) => <ErrorComponent error={error} />,
   defaultPendingComponent: () => (
     <div>
