@@ -1,33 +1,46 @@
-import { useState } from 'react';
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { RouterProvider, ErrorComponent, createRouter } from '@tanstack/react-router';
 import { HelmetProvider } from 'react-helmet-async';
 
-import reactLogo from './assets/react.svg';
+import { routeTree } from './routeTree.gen';
 
-import './App.css';
+const queryClient = new QueryClient();
+
+const router = createRouter({
+  context: {
+    auth: undefined!, // We'll inject this when we render
+    queryClient,
+  },
+  // @ts-expect-error will always be "any"
+  defaultErrorComponent: ({ error }) => <ErrorComponent error={error} />,
+  defaultPendingComponent: () => (
+    <div>
+      <p>Loading...</p>
+    </div>
+  ),
+  defaultPreload: 'intent',
+  // Since we're using React Query, we don't want loader calls to ever be stale
+  // This will ensure that the loader is always called when the route is preloaded or visited
+  defaultPreloadStaleTime: 0,
+  routeTree,
+});
+
+declare module '@tanstack/react-router' {
+  interface Register {
+    router: typeof router;
+  }
+}
 
 const App = () => {
-  const [count, setCount] = useState(0);
-
   return (
-    <HelmetProvider>
-      <div>
-        <a href='https://react.dev' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className='card'>
-        <button onClick={() => setCount((prevCount) => prevCount + 1)} type='button'>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
-    </HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </QueryClientProvider>
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
+export { queryClient };
 export default App;
