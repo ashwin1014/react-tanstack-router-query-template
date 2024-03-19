@@ -1,6 +1,7 @@
 /* eslint-disable import/no-import-module-exports */
-import { STORAGE_KEYS } from '../constants';
-import LocalStorageUtil from '../utils/local-storage';
+import { STORAGE_KEYS } from 'src/constants';
+import LocalStorageUtil from 'src/utils/local-storage';
+import logger from 'src/utils/logger';
 
 /**
  * Custom plugin to detect the preferred language of the user
@@ -14,7 +15,7 @@ const languageDetectorPlugin = {
       // save a user's language choice in Async storage
       LocalStorageUtil.setItem(STORAGE_KEYS.LANGUAGE, language.toLowerCase());
     } catch (error) {
-      console.error('i18n:', 'Error setting language');
+      logger.error('i18n:', 'Error setting language');
     }
   },
 
@@ -29,7 +30,7 @@ const languageDetectorPlugin = {
       // if language was not stored yet, use "en"
       return callback('en');
     } catch (error) {
-      console.error('i18n:', 'Error reading language');
+      logger.error('i18n:', 'Error reading language');
     }
   },
 

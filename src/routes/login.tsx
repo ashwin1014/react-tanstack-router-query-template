@@ -1,7 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
 
+import { Seo } from 'src/components';
+
 const Login = () => {
-  return <div>Login</div>;
+  return (
+    <>
+      <Seo title='Login' />
+      <p>Login</p>
+    </>
+  );
 };
 
 const Route = createFileRoute('/login')({
