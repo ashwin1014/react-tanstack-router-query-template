@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 
 interface SeoProps {
   children?: ReactNode;
@@ -11,11 +11,12 @@ interface SeoProps {
 /**
  * Adds title to browser tab amongst other Seo tags
  *
- * @see [react-helmet-async](https://www.npmjs.com/package/react-helmet-async)
+ * Note: In React 19, the `Helmet` package is not needed.
+ * @see https://react.dev/blog/2024/12/05/react-19#support-for-metadata-tags
  */
 const Seo = ({ title, description, children }: SeoProps) => {
   return (
-    <Helmet>
+    <>
       <title>{title}</title>
       <meta name='title' content={title} />
       <meta property='og:title' name='og:title' content={title} />
@@ -26,7 +27,7 @@ const Seo = ({ title, description, children }: SeoProps) => {
         </>
       ) : null}
       {children ?? null}
-    </Helmet>
+    </>
   );
 };
 

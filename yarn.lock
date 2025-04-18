@@ -1792,6 +1792,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/react-table@npm:8.21.3":
+  version: 8.21.3
+  resolution: "@tanstack/react-table@npm:8.21.3"
+  dependencies:
+    "@tanstack/table-core": 8.21.3
+  peerDependencies:
+    react: ">=16.8"
+    react-dom: ">=16.8"
+  checksum: 1452e7bd1dd0febbfc37e656c61c2c426dc243136333a8688bfadfccfec233e87c9bbe83011d742b0e86ae52c9b3d436bdc5618be4ac675ab921f52317317780
+  languageName: node
+  linkType: hard
+
 "@tanstack/router-core@npm:1.115.3, @tanstack/router-core@npm:^1.115.3":
   version: 1.115.3
   resolution: "@tanstack/router-core@npm:1.115.3"
@@ -1924,6 +1936,13 @@ __metadata:
   version: 0.7.0
   resolution: "@tanstack/store@npm:0.7.0"
   checksum: b72641667fa09640bcd8a4507c51f89348e4b7bd93e0f9339612c38abbf3970da875a802efbbbe6ead1d7e56e017cfd8ad3947fd984bec95b64c489dc379eb6e
+  languageName: node
+  linkType: hard
+
+"@tanstack/table-core@npm:8.21.3":
+  version: 8.21.3
+  resolution: "@tanstack/table-core@npm:8.21.3"
+  checksum: ce260ab981f334ba999240cf68ae942a524a28980f6853275da90d1864a8b56fa59b952bfd2266570f36ae11f66476d1c96dacc640ba5fd9d6d4e2a78cf05187
   languageName: node
   linkType: hard
 
@@ -5552,15 +5571,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"invariant@npm:^2.2.4":
-  version: 2.2.4
-  resolution: "invariant@npm:2.2.4"
-  dependencies:
-    loose-envify: ^1.0.0
-  checksum: cc3182d793aad82a8d1f0af697b462939cb46066ec48bbf1707c150ad5fad6406137e91a262022c269702e01621f35ef60269f6c0d7fd178487959809acdfb14
-  languageName: node
-  linkType: hard
-
 "ip-address@npm:^9.0.5":
   version: 9.0.5
   resolution: "ip-address@npm:9.0.5"
@@ -6342,7 +6352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.0.0, loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -7449,32 +7459,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:^3.2.2":
-  version: 3.2.2
-  resolution: "react-fast-compare@npm:3.2.2"
-  checksum: 2071415b4f76a3e6b55c84611c4d24dcb12ffc85811a2840b5a3f1ff2d1a99be1020d9437ee7c6e024c9f4cbb84ceb35e48cf84f28fcb00265ad2dfdd3947704
-  languageName: node
-  linkType: hard
-
 "react-geiger@npm:1.2.1":
   version: 1.2.1
   resolution: "react-geiger@npm:1.2.1"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: bf7e336f015127816de584dc570fef668678ef5516534560661898da2f6e2550b362562f6b7c522f215c8cf1f51f9c3247ad1011d59a8cf381d05c346b657151
-  languageName: node
-  linkType: hard
-
-"react-helmet-async@npm:2.0.5":
-  version: 2.0.5
-  resolution: "react-helmet-async@npm:2.0.5"
-  dependencies:
-    invariant: ^2.2.4
-    react-fast-compare: ^3.2.2
-    shallowequal: ^1.1.0
-  peerDependencies:
-    react: ^16.6.0 || ^17.0.0 || ^18.0.0
-  checksum: cc2d13496f6fdee6b5f9472d3f7369db3e70e4fc1a55793708c2bbd90d48b0dedc725fd066f987c7a3d74b03a29bd5e65b9f40fa29bd8239e7cfb526aff4d4b6
   languageName: node
   linkType: hard
 
@@ -7987,13 +7977,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shallowequal@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "shallowequal@npm:1.1.0"
-  checksum: f4c1de0837f106d2dbbfd5d0720a5d059d1c66b42b580965c8f06bb1db684be8783538b684092648c981294bf817869f743a066538771dbecb293df78f765e00
-  languageName: node
-  linkType: hard
-
 "shebang-command@npm:^2.0.0":
   version: 2.0.0
   resolution: "shebang-command@npm:2.0.0"
@@ -8368,6 +8351,7 @@ __metadata:
     "@tanstack/react-query-devtools": 5.74.4
     "@tanstack/react-query-persist-client": 5.74.4
     "@tanstack/react-router": 1.116.0
+    "@tanstack/react-table": 8.21.3
     "@tanstack/router-devtools": 1.116.0
     "@tanstack/router-vite-plugin": 1.116.1
     "@types/react": 19.1.2
@@ -8405,7 +8389,6 @@ __metadata:
     react: 19.1.0
     react-dom: 19.1.0
     react-geiger: 1.2.1
-    react-helmet-async: 2.0.5
     react-i18next: 15.4.1
     rimraf: 6.0.1
     sass: 1.86.3
