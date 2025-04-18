@@ -1,7 +1,7 @@
 {
   "name": "tanstack-router-query-template",
-  "version": "1.0.0",
-  "description": "A TypeScript React template using @tanstack/react-router & @tanstack-react-query",
+  "version": "1.2.0",
+  "description": "A TypeScript React(v19) template using @tanstack/react-router & @tanstack-react-query",
   "keywords": [
     "react",
     "react-template",
@@ -17,7 +17,8 @@
     "commitlint",
     "cz-git",
     "i18",
-    "react-template-i18n"
+    "react-template-i18n",
+    "react-19"
   ],
   "repository": {
     "type": "git",

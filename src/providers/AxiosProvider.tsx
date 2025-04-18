@@ -29,12 +29,6 @@ const configureResponseInterceptor = (axiosInstance: AxiosInstance) => {
   axiosInstance.interceptors.response.use(
     (response) => response,
     (error: AxiosError) => {
-      // if (error.response.status === 401) {
-      //   const newToken = await refreshToken();
-      //   localStorage.setItem('authToken', newToken);
-      //   // Retry the original request
-      //   return axios(error.config);
-      // }
       // Change according to your apis
       const errorObject = {
         error: error.response?.data,
@@ -76,16 +70,6 @@ const AxiosProvider = ({
 
   return <AxiosContext.Provider value={axiosInstance}>{children}</AxiosContext.Provider>;
 };
-
-// function useAxios() {
-//   const axiosInstance = useContext(AxiosContext);
-
-//   if (!axiosInstance) {
-//     throw new Error('useAxios must be used within an AxiosProvider');
-//   }
-
-//   return axiosInstance;
-// }
 
 export type { AxiosResponse };
 export { AxiosContext };

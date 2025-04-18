@@ -1,4 +1,4 @@
-# React + TypeScript + Vite + TanStack Router + TanStack Query + AirBNB EsList
+# React(v19) + TypeScript + Vite + TanStack Router + TanStack Query + AirBNB EsList
 
 
 ## A TypeScript React template using @tanstack/router & @tanstack-react-query. 
