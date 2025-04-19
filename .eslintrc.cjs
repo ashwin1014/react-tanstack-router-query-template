@@ -34,6 +34,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: "./tsconfig.json",
+    extraFileExtensions: ['.json'],
   },
   plugins: [
     "@typescript-eslint",

@@ -12,4 +12,4 @@ function useAxios() {
   return axiosInstance;
 }
 
-export default useAxios;
+export { useAxios };

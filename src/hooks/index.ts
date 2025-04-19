@@ -1,2 +1,3 @@
-export { default as useAxios } from './useAxios';
-export { default as useLanguageSwitch } from './useLanguageSwitch';
+export { useAxios } from './useAxios';
+export { useLanguageSwitch } from './useLanguageSwitch';
+export { useAuth } from './useAuth';

@@ -7,4 +7,6 @@ enum STORAGE_KEYS {
   THEME = 'app/theme',
 }
 
-export { STORAGE_KEYS };
+const SHOW_DEV_TOOLS = true;
+
+export { STORAGE_KEYS, SHOW_DEV_TOOLS };

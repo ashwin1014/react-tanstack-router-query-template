@@ -39,4 +39,4 @@ const useLanguageSwitch = (): {
   };
 };
 
-export default useLanguageSwitch;
+export { useLanguageSwitch };

@@ -71,7 +71,5 @@ const AxiosProvider = ({
   return <AxiosContext.Provider value={axiosInstance}>{children}</AxiosContext.Provider>;
 };
 
-export type { AxiosResponse };
-export { AxiosContext };
-export type { AxiosError };
-export default AxiosProvider;
+export { AxiosContext, AxiosProvider };
+export type { AxiosError, AxiosResponse };

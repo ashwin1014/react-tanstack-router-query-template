@@ -1,13 +1,16 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider, ErrorComponent, createRouter } from '@tanstack/react-router';
-import { HelmetProvider } from 'react-helmet-async';
 
+import { AuthProvider } from './context/authContext';
+import { useAuth } from './hooks';
+import { AxiosProvider } from './providers/AxiosProvider';
 import { routeTree } from './routeTree.gen';
 
 const queryClient = new QueryClient();
 
 const router = createRouter({
   context: {
+    auth: undefined!, // This will be set after we wrap the app in an AuthProvider
     queryClient,
   },
   defaultErrorComponent: ({ error }) => <ErrorComponent error={error} />,
@@ -29,13 +32,20 @@ declare module '@tanstack/react-router' {
   }
 }
 
+const InnerApp = () => {
+  const auth = useAuth();
+  return <RouterProvider router={router} context={{ auth }} />;
+};
+
 const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <HelmetProvider>
-        <RouterProvider router={router} />
-      </HelmetProvider>
-    </QueryClientProvider>
+    <AuthProvider>
+      <AxiosProvider env='production'>
+        <QueryClientProvider client={queryClient}>
+          <InnerApp />
+        </QueryClientProvider>
+      </AxiosProvider>
+    </AuthProvider>
   );
 };
 
